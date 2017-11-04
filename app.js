@@ -44,6 +44,7 @@ const port = process.env.PORT || 1110;
 
 //Load Routes
 const users = require('./routes/users');
+const tickets = require('./routes/tickets');
 
 //CORS Middleware
 app.use(cors());
@@ -66,6 +67,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 //Use Routes
 app.use('/users', users);
+app.use('/tickets', tickets);
 
 //Testing index route
 app.get('/', (req, res) => {
